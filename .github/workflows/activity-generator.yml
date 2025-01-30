@@ -12,6 +12,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Generate Activity
+      - name: Generate Fake Activity
         run: |
-          curl -sSL https://raw.githubusercontent.com/Shpota/github-activity-generator/main/activity-generator.sh | bash
+          echo "Making a fake commit" > activity.txt
+          git add activity.txt
+          git commit -m "Generated fake activity"
+          git push
