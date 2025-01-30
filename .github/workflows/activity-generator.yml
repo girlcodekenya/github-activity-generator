@@ -1,0 +1,17 @@
+name: GitHub Activity Generator
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # This will run the activity every hour, adjust if needed
+  workflow_dispatch:
+
+jobs:
+  generate-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Generate Activity
+        run: |
+          curl -sSL https://raw.githubusercontent.com/Shpota/github-activity-generator/main/activity-generator.sh | bash
