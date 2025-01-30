@@ -14,8 +14,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          git config --global user.name "YourName"
-          git config --global user.email "youremail@example.com"
+          git config --global user.name "girlcodekenya"
+          git config --global user.email "rtunguru@gmail.com"
 
       - name: Generate Fake Activity
         run: |
