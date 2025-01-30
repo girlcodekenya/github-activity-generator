@@ -20,6 +20,8 @@ jobs:
       - name: Generate Fake Activity
         run: |
           echo "Making a fake commit" > activity.txt
+          cat activity.txt  # Show contents to confirm it's being written
           git add activity.txt
-          git commit -m "Generated fake activity"
-          git push
+          git status  # Check if it's staged for commit
+          git commit -m "Generated fake activity" || echo "No changes to commit"
+          git push || echo "Failed to push changes"
